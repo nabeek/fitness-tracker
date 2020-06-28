@@ -6,7 +6,7 @@ This application utilizes MongoDB, Express, and Node to create a simple fitness 
 
 ## Usage
 
-Fitness Tracker is live [here](#).
+Fitness Tracker is live [here](https://nabeek-fitness-tracker.herokuapp.com/).
 
 ## Screenshot
 
