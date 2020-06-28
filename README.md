@@ -1,51 +1,47 @@
 # Workout Tracker
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+## Motivation
 
-## User Story
+This application utilizes MongoDB, Express, and Node to create a simple fitness or workout tracker. When the user loads the page, they are given the option to create a new workout, continue with their last workout, or view stats for past workouts.
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+## Usage
 
-## Business Context
+Fitness Tracker is live [here](#).
 
-A consumer will reach their fitness goals quicker when they track their workout progress.
+## Screenshot
 
-## Acceptance Criteria
+![fitness-tracker](https://user-images.githubusercontent.com/4752937/85959825-fca42600-b95b-11ea-8b1a-062102184936.png)
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+## Tech Used
 
-The user should be able to:
+[Express](https://expressjs.com/)\
+[MongoDB](https://www.mongodb.com/)\
+[Mongoose](https://mongoosejs.com/docs/)\
+[morgan](https://www.npmjs.com/package/morgan)
 
-  * Add exercises to a previous workout plan.
+## Code Examples
 
-  * Add new exercises to a new workout plan.
+The provided codebase required a totalDuration property be added to a workout object. There are probably several approaches to accomplish this, but this is the one I used:
 
-  * View multiple the combined weight of multiple exercises on the `stats` page.
+```js
+workoutSchema.virtual("totalDuration").get(function () {
+  let total = 0;
+  this.exercises.forEach(function (e) {
+    total += e.duration;
+  });
 
-## Commit Early and Often
+  return total;
+});
+```
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+## Contributing
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
+## Roadmap
 
-Follow these guidelines for committing:
+Exercise names should have more complex validation, or some approach to maintain clean data and ensure duplicate exercises are not added, e.g. bench and bench press.
 
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
+## License
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-* Test your application before you commit to ensure functionality at every step in the development process
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the Github repository
+MIT © [nabeek](https://github.com/nabeek)
