@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+function isPositiveInteger(n) {
+  return n >>> 0 === parseFloat(n);
+}
+
 const workoutSchema = new Schema(
   {
     day: {
@@ -17,27 +21,34 @@ const workoutSchema = new Schema(
         },
         name: {
           type: String,
+          trim: true,
           required: "Enter an exercise name",
         },
         duration: {
           type: Number,
           required: "Enter a duration in minutes",
+          min: 1,
+          max: 1000,
         },
         distance: {
           type: Number,
           min: 1,
+          max: 100,
         },
         weight: {
           type: Number,
           min: 1,
+          max: 1000,
         },
         sets: {
           type: Number,
           min: 1,
+          max: 100,
         },
         reps: {
           type: Number,
           min: 1,
+          max: 500,
         },
       },
     ],

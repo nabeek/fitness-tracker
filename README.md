@@ -40,7 +40,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Roadmap
 
-Exercise names should have more complex validation, or some approach to maintain clean data and ensure duplicate exercises are not added, e.g. bench and bench press.
+- Exercise names should have more complex validation, or some approach to maintain clean data and ensure duplicate exercises are not added, e.g. bench and bench press
+- There should be more client-side validation on numbers entered for exercises (client-side was provided code)
+- Currently, the charts inaccurately display/populate data from the database (code was provided)
 
 ## License
 
